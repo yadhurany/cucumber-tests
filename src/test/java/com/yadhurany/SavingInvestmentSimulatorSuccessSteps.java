@@ -27,7 +27,7 @@ public class SavingInvestmentSimulatorSuccessSteps {
     }
 
     @Given("the client informed R$20,00 in the field \"Qual o valor que você quer aplicar?\"")
-    public void givenWheClientInformedHowMuchToApply() {
+    public void givenTheClientInformedHowMuchToApply() {
         simuladorPage.setValorAplicar("20,00");
     }
 

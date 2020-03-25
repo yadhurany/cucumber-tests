@@ -1,5 +1,5 @@
 @Smoke
-Feature: Scenario to simulate a saving investment with success
+Feature: Saving Investment Simulator
 
   Scenario: Simulate a saving investment with success
     Given the client informed R$20,00 in the field "Qual o valor que você quer aplicar?"

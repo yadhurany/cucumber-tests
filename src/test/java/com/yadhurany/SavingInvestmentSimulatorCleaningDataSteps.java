@@ -10,7 +10,7 @@ import org.openqa.selenium.WebDriver;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SuppressWarnings("unused")
-public class SavingInvestmentSimulatorValueLess20Steps {
+public class SavingInvestmentSimulatorCleaningDataSteps {
 
     private WebDriver driver;
     private SavingInvestmentSimulatorUIPage simuladorPage;
@@ -21,19 +21,19 @@ public class SavingInvestmentSimulatorValueLess20Steps {
         simuladorPage = new SavingInvestmentSimulatorUIPage(driver);
     }
 
-    @Given("the client filled in the field \"Qual o valor que você quer aplicar?\" with less than R$20,00")
-    public void givenTheClientInformedHowMuchToApply() {
-        simuladorPage.setValorAplicar("16,00");
+    @Given("the client has filled one or more fields of the form")
+    public void givenTheClientInformedOneOrMoreFields() {
+        simuladorPage.setValorAplicar("127,00");
     }
 
-    @When("he or she tries to fill in another field")
-    public void whenHeOrSheClicksOnOtherField() {
-        simuladorPage.clickValorInvestirField();
+    @When("he or she clicks on the button \"Limpar formulário\"")
+    public void whenHeOrSheClicksOnCleanForm() {
+        simuladorPage.clickLimparButton();
     }
 
-    @Then("the system shows the message \"Valor mínimo de 20.00\"")
-    public void thenShowTheErrorMessage() {
-        assertEquals("Valor mínimo de 20.00", simuladorPage.getValorAplicarErrorText());
+    @Then("the system cleans the data that was filled in")
+    public void thenTheSystemCleansTheData() {
+        assertEquals("", simuladorPage.getValorAplicarText());
     }
 
 }
