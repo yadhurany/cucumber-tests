@@ -1,4 +1,4 @@
-## Cucumber with UI tests
+## UI tests with Cucumber
 
 Project developed as a test for a QA position.
 
